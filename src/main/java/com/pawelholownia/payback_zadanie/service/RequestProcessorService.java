@@ -30,11 +30,11 @@ public class RequestProcessorService {
     public void processRequest(Request request) {
         log.info("Thread {} processing request: {}", Thread.currentThread().getName(), request);
         // Simulate processing time using random
-        try {
-            Thread.sleep((long) (Math.random() * 1000));
-        } catch (InterruptedException e) {
-            log.error("Error processing request", e);
-        }
+//        try {
+//            Thread.sleep((long) (Math.random() * 1000));
+//        } catch (InterruptedException e) {
+//            log.error("Error processing request", e);
+//        }
 
         switch (request.getType()) {
             case TYPE1:

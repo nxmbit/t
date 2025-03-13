@@ -1,1 +1,45 @@
-# t
+org.springframework.core.task.TaskRejectedException: ExecutorService in active state did not accept task: org.springframework.aop.interceptor.AsyncExecutionInterceptor$$Lambda/0x00007f9213721ed0@319d76da
+at org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.submit(ThreadPoolTaskExecutor.java:413) ~[spring-context-6.2.3.jar:6.2.3]
+at org.springframework.aop.interceptor.AsyncExecutionAspectSupport.doSubmit(AsyncExecutionAspectSupport.java:297) ~[spring-aop-6.2.3.jar:6.2.3]
+at org.springframework.aop.interceptor.AsyncExecutionInterceptor.invoke(AsyncExecutionInterceptor.java:128) ~[spring-aop-6.2.3.jar:6.2.3]
+at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.3.jar:6.2.3]
+at com.pawelholownia.payback_zadanie.service.RequestProcessorService$$SpringCGLIB$$0.processRequest(<generated>) ~[classes/:na]
+at com.pawelholownia.payback_zadanie.service.QueueService.consumeRequests(QueueService.java:85) ~[classes/:na]
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545) ~[na:na]
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1095) ~[na:na]
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:619) ~[na:na]
+at java.base/java.lang.Thread.run(Thread.java:1447) ~[na:na]
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@76112a1[Not completed, task = org.springframework.aop.interceptor.AsyncExecutionInterceptor$$Lambda/0x00007f9213721ed0@319d76da] rejected from org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor$1@a1c6051[Running, pool size = 10, active threads = 10, queued tasks = 25, completed tasks = 6]
+at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2027) ~[na:na]
+at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:792) ~[na:na]
+at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1328) ~[na:na]
+at org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor$1.execute(ThreadPoolTaskExecutor.java:295) ~[spring-context-6.2.3.jar:6.2.3]
+at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148) ~[na:na]
+at org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.submit(ThreadPoolTaskExecutor.java:410) ~[spring-context-6.2.3.jar:6.2.3]
+... 11 common frames omitted
+
+2025-03-13T21:33:32.433+01:00 ERROR 130016 --- [payback_zadanie] [ueue-Consumer-0] c.p.p.service.QueueService               : Error processing request
+
+org.springframework.core.task.TaskRejectedException: ExecutorService in active state did not accept task: org.springframework.aop.interceptor.AsyncExecutionInterceptor$$Lambda/0x00007f9213721ed0@10f65577
+at org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.submit(ThreadPoolTaskExecutor.java:413) ~[spring-context-6.2.3.jar:6.2.3]
+at org.springframework.aop.interceptor.AsyncExecutionAspectSupport.doSubmit(AsyncExecutionAspectSupport.java:297) ~[spring-aop-6.2.3.jar:6.2.3]
+at org.springframework.aop.interceptor.AsyncExecutionInterceptor.invoke(AsyncExecutionInterceptor.java:128) ~[spring-aop-6.2.3.jar:6.2.3]
+at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.3.jar:6.2.3]
+at com.pawelholownia.payback_zadanie.service.RequestProcessorService$$SpringCGLIB$$0.processRequest(<generated>) ~[classes/:na]
+at com.pawelholownia.payback_zadanie.service.QueueService.consumeRequests(QueueService.java:85) ~[classes/:na]
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545) ~[na:na]
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1095) ~[na:na]
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:619) ~[na:na]
+at java.base/java.lang.Thread.run(Thread.java:1447) ~[na:na]
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@1f0db9d2[Not completed, task = org.springframework.aop.interceptor.AsyncExecutionInterceptor$$Lambda/0x00007f9213721ed0@10f65577] rejected from org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor$1@a1c6051[Running, pool size = 10, active threads = 10, queued tasks = 25, completed tasks = 6]
+at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2027) ~[na:na]
+at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:792) ~[na:na]
+at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1328) ~[na:na]
+at org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor$1.execute(ThreadPoolTaskExecutor.java:295) ~[spring-context-6.2.3.jar:6.2.3]
+at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148) ~[na:na]
+at org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.submit(ThreadPoolTaskExecutor.java:410) ~[spring-context-6.2.3.jar:6.2.3]
+... 11 common frames omitted
